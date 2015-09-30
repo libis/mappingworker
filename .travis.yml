@@ -1,0 +1,11 @@
+install:
+ - mkdir resources
+ - mkdir requests
+ - echo "request_directory = requests" > resources/mapping_worker_conf.properties
+ - echo "rmq_server = localhost" > resources/queue_server_conf.properties 
+ - echo "rmq_id = guest" >> resources/queue_server_conf.properties 
+ - echo "rmq_pwd = guest" >> resources/queue_server_conf.properties 
+ - echo "rmq_vhost = /" >> resources/queue_server_conf.properties
+ - echo "rmq_mapping_queue = mappingworker_test" >> resources/queue_server_conf.properties
+services:
+  - rabbitmq
